@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {CnxtConsumer} from '../index';
 
 class Footer extends Component{
     state = {
@@ -13,20 +14,22 @@ class Footer extends Component{
         this.setState({name:"shubham"});
     }
     render(){
-        const animal = ['cat', 'dog', 'horse'];
-        return <React.Fragment> 
-            <h1>This my footer.</h1>
-        <div>
-        {animal.map(animal => {
-            return (
-                <div key={animal}>
-                    <h1>{animal}</h1>
-                </div>
-            );
-        })}
-    </div>    
-    
-    </React.Fragment>
+        return(
+            <CnxtConsumer>
+                {(context) => (
+                    <div>
+                        {context.animals.map(animal => {
+                            return (
+                                <div key = {animal}>
+                                    <h1>{animal}</h1>
+                                </div>
+                            );
+                        })}
+                    </div>
+             )}
+            </CnxtConsumer>
+        )
     }
+
 }
 export default Footer;
