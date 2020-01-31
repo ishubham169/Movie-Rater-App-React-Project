@@ -3,7 +3,7 @@ import './App.css';
 import Headers from './components/header';
 import Footer from './components/footer';
 import styled from 'styled-components'
-
+import Number from './components/number'
 function createAlert(){
   alert("hello, u clicked me!!");
 }
@@ -18,12 +18,7 @@ const Paragraph = styled.p`
 function App() {
   return (
     <div className="App">
-      <Headers info="This is my headers."
-                num="45"/>
-      <p style = {pstyle}>  Main content </p>
-      <Paragraph>New Style</Paragraph>
-      <Footer trademark="this is my footers."
-      myalert={createAlert}/>
+      <Number/>
     </div>
   );
 }
